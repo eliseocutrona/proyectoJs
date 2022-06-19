@@ -1,22 +1,22 @@
 ::-moz-selection {
-  background: #5C9F24;
+  background: #5c9f24;
 }
 ::selection {
-  background: #5C9F24;
+  background: #5c9f24;
 }
 
 a {
-  color: #5C9F24;
+  color: #5c9f24;
 }
 
 a:hover {
-	color: #33782D;
+  color: #33782d;
 }
 
 /* --- button theme --- */
 .btn-theme {
-  background: #5C9F24;
-  *background-color: #5C9F24;
+  background: #5c9f24;
+  *background-color: #5c9f24;
 }
 
 .btn-theme:hover,
@@ -24,43 +24,42 @@ a:hover {
 .btn-theme.active,
 .btn-theme.disabled,
 .btn-theme[disabled] {
-  background: #33782D;
-  *background: #33782D;
+  background: #33782d;
+  *background: #33782d;
 }
 
 .scrollup {
- background-color: #5C9F24;
+  background-color: #5c9f24;
 }
 
 /* fontawesome icons */
 [class^="icon-"].active,
 [class*=" icon-"].active {
-    background-color: #5C9F24;
+  background-color: #5c9f24;
 }
 
-
 ul.nav li.current {
-  color: #5C9F24;
+  color: #5c9f24;
 }
 
 .navbar .nav > li > a:hover,
 .navbar .nav > li > a:focus,
 .navbar .nav > li > a:active,
 .navbar .nav > li.active > a {
-    color: #5C9F24 !important;
+  color: #5c9f24 !important;
 }
 
 .sy-pager li.sy-active a {
-  background-color: #5C9F24;
+  background-color: #5c9f24;
 }
 
 .navbar .nav > li > a:hover {
-  color: #5C9F24;
+  color: #5c9f24;
 }
 
 input:focus {
-	border: 1px solid #5C9F24;
-	border-width:1px;
+  border: 1px solid #5c9f24;
+  border-width: 1px;
 }
 textarea:focus,
 input[type="text"]:focus,
@@ -78,22 +77,19 @@ input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="color"]:focus,
 .uneditable-input:focus {
-  border-color: #5C9F24;
+  border-color: #5c9f24;
 }
-
 
 /* tab */
 
 .nav-tabs > a {
-	color:#5C9F24;
+  color: #5c9f24;
 }
-
 
 /* accordion */
 .accordion-heading a:hover {
-	color: #5C9F24;
+  color: #5c9f24;
 }
-.accordion-heading .active{
-	color: #5C9F24;
+.accordion-heading .active {
+  color: #5c9f24;
 }
-
