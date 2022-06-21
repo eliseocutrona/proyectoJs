@@ -1,3 +1,22 @@
+// >> Consigna: Con los conocimientos vistos hasta el momento, empezarás a armar la estructura inicial de tu proyecto integrador. A partir de los ejemplos mostrados la primera clase, deberás:
+// Pensar el alcance de tu proyecto: ¿usarás un cotizador de seguros? ¿un simulador de créditos? ¿un simulador personalizado?
+// Armar la estructura HTML del proyecto.
+// Incorporar lo ejercitado en las clases anteriores, algoritmo condicional y algoritmo con ciclo.
+// Utilizar funciones para realizar esas operaciones.
+// >>Aspectos a incluir en el entregable:
+// Archivo HTML y Archivo JS, referenciado en el HTML por etiqueta <script src="js/miarchivo.js"></script>, que incluya la definición de un algoritmo en JavaScript que emplee funciones para resolver el procesamiento principal del simulador
+// >>Ejemplo:
+// Calcular costo total de productos y/o servicios seleccionados por el usuario.
+// Calcular pagos en cuotas sobre un monto determinado.
+// Calcular valor final de un producto seleccionado en función de impuestos y descuentos.
+// Calcular tiempo de espera promedio en relación a la cantidad de turnos registrados.
+// Calcular edad promedio de personas registradas.
+// Calcular nota final de alumnos ingresados.
+
+// ALCANCE : SIMULADOR DE COMPRAS
+// YA FUE ARMADA UNA ESTRUCTURA HTML DEL PROYECTO INICIAL falta mejorarla
+// SE REALIZO EL calculo  del costo total de productos y/o servicios seleccionados por el usuario.
+
 let producto = "";
 let precio = 0;
 let cantidad = 0;
@@ -101,7 +120,6 @@ if (cantidad > 0) {
   if (finalizarCompra) {
     alert("Su compra ha sido realizada con exito");
   } else {
-    alert("Bienvenido nuevamente a solicitud de Compra");
-    solicitudCompra();
+    alert("Esperamos volverlo a ver pronto. Saludos");
   }
 }
