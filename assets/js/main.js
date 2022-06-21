@@ -17,23 +17,29 @@ function sumarIva(precio) {
 }
 
 function obtenerPrecioxTalle(talle, precio) {
-  talle = prompt("Que talle sos? A) XS B) S C) M D) L E) XL F) XXL");
+  talle = prompt(
+    "Que talle sos? A) Talle-XS B) Talle-S C) Talle-M D) Talle-L E) Talle-XL F) Talle-XXL"
+  );
 
   switch (talle) {
     case "A":
       precio = 100;
+      break;
     case "B":
       precio = 101;
+      break;
     case "C":
       precio = 102;
       break;
     case "D":
       precio = 103;
+      break;
     case "E":
       precio = 104;
+      break;
     case "F":
       precio = 105;
-
+      break;
     default:
       alert("Precio no definido");
 
@@ -48,7 +54,7 @@ do {
     "¿Queres comprar algun producto A) Remera B) Camisa C) Chomba D) NO?"
   );
 
-  if (seguirComprando === true) {
+  if (seguirComprando == true && producto != "D") {
     cantidad = Number(prompt("¿Cuantos queres comprar?"));
   }
 
@@ -61,9 +67,8 @@ do {
       // alert(precio); debugeo
       break;
     case "D":
-    case "":
-      alert("Lamentamos que no quiera comprar");
       seguirComprando = false;
+      alert("Lamentamos que no quiera comprar");
       break;
     default:
       alert("Algunos de los datos ingresados no son correctos");
@@ -79,7 +84,7 @@ do {
   if (seguirComprando === true) {
     seguirComprando = confirm("¿Queres seguir comprando?");
   }
-} while (seguirComprando === true);
+} while (seguirComprando == true);
 
 // si la cantidad es mayor de 0 quiere decir que compro ,
 // calculo el IVA con el precio del producto x talle
@@ -96,6 +101,7 @@ if (cantidad > 0) {
   if (finalizarCompra) {
     alert("Su compra ha sido realizada con exito");
   } else {
-    alert("Esperamos volver a verlo pronto");
+    alert("Bienvenido nuevamente a solicitud de Compra");
+    solicitudCompra();
   }
 }
