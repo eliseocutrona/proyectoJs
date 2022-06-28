@@ -43,7 +43,6 @@ class Producto {
     this.precio = parseFloat(precio);
     this.talle = talle;
     this.cantidad = cantidad;
-    this.disponible = true;
   }
 }
 
@@ -165,14 +164,11 @@ for (let producto of arrayProductos) {
   console.log(producto.nombre);
   console.log(producto.precio);
   console.log(producto.cantidad);
-  console.log(producto.disponible);
   console.log(producto.talle);
 }
 
 // PRODUCTOS sin STOCK que la cantidad del objeto sea igual a 0 o que la disponibilidad este en false
-let sinStock = arrayProductos.filter(
-  (producto) => producto.cantidad === 0 || producto.disponible == false
-);
+let sinStock = arrayProductos.filter((producto) => producto.cantidad === 0);
 console.log(sinStock);
 
 console.log("Lista de Productos sin Stock:");
@@ -181,7 +177,6 @@ for (let producto of sinStock) {
   console.log(producto.nombre);
   console.log(producto.precio);
   console.log(producto.cantidad);
-  console.log(producto.disponible);
   console.log(producto.talle);
 }
 
@@ -198,7 +193,6 @@ for (let producto of ordenadosCantidad) {
   console.log(producto.nombre);
   console.log(producto.precio);
   console.log(producto.cantidad);
-  console.log(producto.disponible);
   console.log(producto.talle);
 }
 
@@ -206,16 +200,15 @@ let ordenadosPrecio = [];
 ordenadosCantidad = arrayProductos.map((elemento) => elemento);
 ordenadosPrecio = arrayProductos;
 ordenadosPrecio.sort(function (a, b) {
-  return a.precio - b.precio;
+  return b.precio - a.precio;
 });
 
-console.log("Ordenados por Precios Ascendente");
+console.log("Ordenados por Precios Descendente");
 console.log(ordenadosPrecio);
 
 for (let producto of ordenadosPrecio) {
   console.log(producto.nombre);
   console.log(producto.precio);
   console.log(producto.cantidad);
-  console.log(producto.disponible);
   console.log(producto.talle);
 }
