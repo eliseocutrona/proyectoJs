@@ -196,10 +196,10 @@ for (let producto of sinStock) {
 let ordenadosCantidad = [];
 ordenadosCantidad = arrayProductos.map((elemento) => elemento);
 ordenadosCantidad.sort(function (a, b) {
-  return a.cantidad - b.cantidad;
+  return  b.cantidad - a.cantidad;
 });
 
-console.log("Ordenados por Cantidad Ascendente");
+console.log("Ordenados por Cantidad Descendente");
 console.log(ordenadosCantidad);
 
 document.write("<ul><li><h3>Lista de Productos por cantidad: </h3></li></ul>");
