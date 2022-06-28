@@ -162,19 +162,11 @@ if (cantidad > 0) {
 console.log(arrayProductos);
 
 for (let producto of arrayProductos) {
-  document.write("<ul><li><h3>Nombre: " + producto.nombre + "</h3></li></ul>");
-  document.write("<ul><li><h3>Precio: " + producto.precio + "</h3></li></ul>");
-
-  document.write("<ul><li><h3>Talle: " + producto.talle + "</h3></li></ul>");
-  document.write(
-    "<ul><li><h3>Cantidad: " + producto.cantidad + "</h3></li></ul>"
-  );
-
   console.log(producto.nombre);
   console.log(producto.precio);
-  console.log(producto.nombre);
-  console.log(producto.nombre);
-  console.log(producto.nombre);
+  console.log(producto.cantidad);
+  console.log(producto.disponible);
+  console.log(producto.talle);
 }
 
 // PRODUCTOS sin STOCK que la cantidad del objeto sea igual a 0 o que la disponibilidad este en false
@@ -183,31 +175,31 @@ let sinStock = arrayProductos.filter(
 );
 console.log(sinStock);
 
-document.write("<ul><li><h3>Lista de Productos sin Stock: </h3></li></ul>");
+console.log("Lista de Productos sin Stock:");
 
 for (let producto of sinStock) {
   console.log(producto.nombre);
   console.log(producto.precio);
-  console.log(producto.nombre);
-  console.log(producto.nombre);
-  console.log(producto.nombre);
+  console.log(producto.cantidad);
+  console.log(producto.disponible);
+  console.log(producto.talle);
 }
 
 let ordenadosCantidad = [];
 ordenadosCantidad = arrayProductos.map((elemento) => elemento);
 ordenadosCantidad.sort(function (a, b) {
-  return  b.cantidad - a.cantidad;
+  return b.cantidad - a.cantidad;
 });
 
 console.log("Ordenados por Cantidad Descendente");
 console.log(ordenadosCantidad);
 
-document.write("<ul><li><h3>Lista de Productos por cantidad: </h3></li></ul>");
-
 for (let producto of ordenadosCantidad) {
   console.log(producto.nombre);
-  console.log(producto.talle);
+  console.log(producto.precio);
   console.log(producto.cantidad);
+  console.log(producto.disponible);
+  console.log(producto.talle);
 }
 
 let ordenadosPrecio = [];
@@ -220,10 +212,10 @@ ordenadosPrecio.sort(function (a, b) {
 console.log("Ordenados por Precios Ascendente");
 console.log(ordenadosPrecio);
 
-document.write("<ul><li><h3>Lista de Productos por Precio: </h3><li>");
-
 for (let producto of ordenadosPrecio) {
   console.log(producto.nombre);
-  console.log(producto.talle);
+  console.log(producto.precio);
   console.log(producto.cantidad);
+  console.log(producto.disponible);
+  console.log(producto.talle);
 }
