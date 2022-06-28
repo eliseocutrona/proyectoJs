@@ -1,21 +1,27 @@
-// >> Consigna: Con los conocimientos vistos hasta el momento, empezarás a armar la estructura inicial de tu proyecto integrador. A partir de los ejemplos mostrados la primera clase, deberás:
-// Pensar el alcance de tu proyecto: ¿usarás un cotizador de seguros? ¿un simulador de créditos? ¿un simulador personalizado?
-// Armar la estructura HTML del proyecto.
-// Incorporar lo ejercitado en las clases anteriores, algoritmo condicional y algoritmo con ciclo.
-// Utilizar funciones para realizar esas operaciones.
-// >>Aspectos a incluir en el entregable:
-// Archivo HTML y Archivo JS, referenciado en el HTML por etiqueta <script src="js/miarchivo.js"></script>, que incluya la definición de un algoritmo en JavaScript que emplee funciones para resolver el procesamiento principal del simulador
-// >>Ejemplo:
-// Calcular costo total de productos y/o servicios seleccionados por el usuario.
-// Calcular pagos en cuotas sobre un monto determinado.
-// Calcular valor final de un producto seleccionado en función de impuestos y descuentos.
-// Calcular tiempo de espera promedio en relación a la cantidad de turnos registrados.
-// Calcular edad promedio de personas registradas.
-// Calcular nota final de alumnos ingresados.
+// PRIMERA ENTREGA DEL PROYECTO FINAL
+// Formato: Página HTML y  código fuente en JavaScript. Debe identificar el apellido del alumno/a en el nombre de archivo comprimido por “claseApellido”.
+// Sugerencia: Si bien, por el momento solo podemos hacer entradas con prompt() y salidas con alert() o console.log(), es suficiente para empezar a pensar el proceso a simular en términos de entradas, variables, estructuras, funciones, métodos y salidas. Verificar Rúbrica
 
-// ALCANCE : SIMULADOR DE COMPRAS
-// YA FUE ARMADA UNA ESTRUCTURA HTML DEL PROYECTO INICIAL falta mejorarla
-// SE REALIZO EL calculo  del costo total de productos y/o servicios seleccionados por el usuario.
+// >>Objetivos Generales:
+// Codificar la funcionalidad inicial del simulador.
+// Identificar el flujo de trabajo del script en términos de captura de entradas ingresadas por el usuario, procesamiento esencial del simulador y notificación de resultados en forma de salida.
+
+// >>Objetivos Específicos:
+// Capturar entradas mediante prompt().
+// Declarar variables y objetos necesarios para simular el proceso seleccionado.
+// Crear funciones y/o métodos para realizar operaciones (suma, resta, concatenación, división, porcentaje, etc).
+// Efectuar una salida, que es el resultado de los datos procesados, la cual puede hacerse por alert() o console.log().
+
+// >>Para tener en cuenta:
+// La estructura hace referencia a el html y css, correspondientes al armado de la página general, pero que el JS que se evalúa, aún no está interactuando con ella.
+
+// >>Se debe entregar:
+// Estructura HTML del proyecto.
+// Variables de JS necesarias.
+// Funciones esenciales del proceso a simular.
+// Objetos de JS
+// Arrays
+// Métodos de búsqueda y filtrado sobre el Array
 
 let producto = "";
 let precio = 0;
@@ -24,6 +30,22 @@ let precioTotal = 0;
 let cantidadTotal = 0;
 let seguirComprando = true;
 let talle = "";
+
+let nombreAux = "";
+let talleAux = "";
+let precioAux;
+
+var arrayProductos = [];
+
+class Producto {
+  constructor(nombre, precio, talle, cantidad) {
+    this.nombre = nombre;
+    this.precio = parseFloat(precio);
+    this.talle = talle;
+    this.cantidad = cantidad;
+    this.disponible = true;
+  }
+}
 
 // calcularIva al producto seleccionado
 function calcularIva(precio) {
@@ -35,38 +57,7 @@ function sumarIva(precio) {
   return precio + calcularIva(precio);
 }
 
-function obtenerPrecioxTalle(talle, precio) {
-  talle = prompt(
-    "Que talle sos? A) Talle-XS B) Talle-S C) Talle-M D) Talle-L E) Talle-XL F) Talle-XXL"
-  );
-
-  switch (talle) {
-    case "A":
-      precio = 100;
-      break;
-    case "B":
-      precio = 101;
-      break;
-    case "C":
-      precio = 102;
-      break;
-    case "D":
-      precio = 103;
-      break;
-    case "E":
-      precio = 104;
-      break;
-    case "F":
-      precio = 105;
-      break;
-    default:
-      alert("Precio no definido");
-
-      break;
-  }
-
-  return precio;
-}
+// Programa principal
 
 do {
   producto = prompt(
@@ -75,16 +66,58 @@ do {
 
   if (seguirComprando == true && producto != "D") {
     cantidad = Number(prompt("¿Cuantos queres comprar?"));
+    talle = prompt(
+      "Que talle sos? A) Talle-XS B) Talle-S C) Talle-M D) Talle-L E) Talle-XL F) Talle-XXL"
+    );
+
+    switch (talle) {
+      case "A":
+        talleAux = "XS";
+        precio = 100;
+
+        break;
+      case "B":
+        talleAux = "S";
+        precio = 101;
+
+        break;
+      case "C":
+        talleAux = "M";
+        precio = 102;
+
+        break;
+      case "D":
+        talleAux = "L";
+        precio = 103;
+
+        break;
+      case "E":
+        talleAux = "XL";
+        precio = 104;
+
+        break;
+      case "F":
+        talleAux = "XXL";
+        precio = 105;
+
+        break;
+    }
   }
 
   switch (producto) {
     case "A":
-    case "B":
-    case "C":
-      precio = parseInt(obtenerPrecioxTalle(talle, precio));
-      // alert(talle);
-      // alert(precio); debugeo
+      nombreAux = "Remera";
       break;
+
+    case "B":
+      nombreAux = "Camisa";
+      // console.log(Producto);
+      break;
+
+    case "C":
+      nombreAux = "Chomba";
+      break;
+
     case "D":
       seguirComprando = false;
       alert("Lamentamos que no quiera comprar");
@@ -100,6 +133,8 @@ do {
   cantidadTotal += cantidad;
   precioTotal += precio * cantidad;
 
+  arrayProductos.push(new Producto(nombreAux, precio, talleAux, cantidad));
+
   if (seguirComprando === true) {
     seguirComprando = confirm("¿Queres seguir comprando?");
   }
@@ -113,7 +148,7 @@ if (cantidad > 0) {
     "Ha comprado: " +
       cantidadTotal +
       " unidades y el precio final es: $" +
-      parseInt(precioTotal)
+      parseFloat(precioTotal)
   );
 
   finalizarCompra = confirm("¿Quiere finalizar la compra?");
@@ -122,4 +157,96 @@ if (cantidad > 0) {
   } else {
     alert("Esperamos volverlo a ver pronto. Saludos");
   }
+}
+
+console.log(arrayProductos);
+
+for (let producto of arrayProductos) {
+  document.write("<ul><li><h3>Nombre: " + producto.nombre + "</h3></li></ul>");
+  document.write("<ul><li><h3>Precio: " + producto.precio + "</h3></li></ul>");
+  // document.write(
+  //   "<ul><li><h3>Precio con IVA es : " +
+  //     producto.sumarIva() +
+  //     "</h3></li></ul>><br>"
+  // );
+  document.write("<ul><li><h3>Talle: " + producto.talle + "</h3></li></ul>");
+  document.write(
+    "<ul><li><h3>Cantidad: " + producto.cantidad + "</h3></li></ul>"
+  );
+
+  console.log(producto.nombre);
+  console.log(producto.precio);
+  console.log(producto.nombre);
+  console.log(producto.nombre);
+  console.log(producto.nombre);
+}
+
+// PRODUCTOS sin STOCK que la cantidad del objeto sea igual a 0 o que la disponibilidad este en false
+let sinStock = arrayProductos.filter(
+  (producto) => producto.cantidad === 0 || producto.disponible == false
+);
+console.log(sinStock);
+
+document.write("<ul><li><h3>Lista de Productos sin Stock: </h3></li></ul>");
+
+for (let producto of sinStock) {
+  //   document.write("<ul><li><h3>Nombre: " + producto.nombre + "</h3></li></ul>");
+  //   document.write("<ul><li><h3>Precio: " + producto.precio + "</h3></li></ul>");
+  //   document.write(
+  //     "<ul><li><h3>Precio con IVA es : " + producto.sumarIva() + "</h3><li><br>"
+  //   );
+  //   document.write("<ul><li><h3>Talle: " + producto.talle + "</h3></li></ul>");
+  //   document.write(
+  //     "<ul><li><h3>Cantidad: " + producto.cantidad + "</h3></li></ul>"
+  //   );
+
+  console.log(producto.nombre);
+  console.log(producto.precio);
+  console.log(producto.nombre);
+  console.log(producto.nombre);
+  console.log(producto.nombre);
+}
+
+let ordenadosCantidad = [];
+ordenadosCantidad = arrayProductos.map((elemento) => elemento);
+ordenadosCantidad.sort(function (a, b) {
+  return a.cantidad - b.cantidad;
+});
+
+console.log("Ordenados por Cantidad Ascendente");
+console.log(ordenadosCantidad);
+
+document.write("<ul><li><h3>Lista de Productos por cantidad: </h3></li></ul>");
+
+for (let producto of ordenadosCantidad) {
+  // document.write("<ul><li><h3>Nombre: " + producto.nombre + "</h3></li></ul>");
+  // document.write("<ul><li><h3>Talle: " + producto.talle + "</h3></li></ul>");
+  // document.write(
+  //   "<ul><li><h3>Cantidad: " + producto.cantidad + "</h3></li></ul>");
+
+  console.log(producto.nombre);
+  console.log(producto.talle);
+  console.log(producto.cantidad);
+}
+
+let ordenadosPrecio = [];
+ordenadosCantidad = arrayProductos.map((elemento) => elemento);
+ordenadosPrecio = arrayProductos;
+ordenadosPrecio.sort(function (a, b) {
+  return a.precio - b.precio;
+});
+
+console.log("Ordenados por Precios Ascendente");
+console.log(ordenadosPrecio);
+
+document.write("<ul><li><h3>Lista de Productos por Precio: </h3><li>");
+
+for (let producto of ordenadosPrecio) {
+  // document.write("<ul><li><h3>Nombre: " + producto.nombre + "</h3></li></ul>");
+  // document.write("<ul><li><h3>Talle: " + producto.talle + "</h3></li></ul>");
+  // document.write("<ul><li><h3>Precio: " + producto.precio + "</h3></li></ul>");
+
+  console.log(producto.nombre);
+  console.log(producto.talle);
+  console.log(producto.cantidad);
 }
