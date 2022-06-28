@@ -164,11 +164,7 @@ console.log(arrayProductos);
 for (let producto of arrayProductos) {
   document.write("<ul><li><h3>Nombre: " + producto.nombre + "</h3></li></ul>");
   document.write("<ul><li><h3>Precio: " + producto.precio + "</h3></li></ul>");
-  // document.write(
-  //   "<ul><li><h3>Precio con IVA es : " +
-  //     producto.sumarIva() +
-  //     "</h3></li></ul>><br>"
-  // );
+
   document.write("<ul><li><h3>Talle: " + producto.talle + "</h3></li></ul>");
   document.write(
     "<ul><li><h3>Cantidad: " + producto.cantidad + "</h3></li></ul>"
@@ -190,16 +186,6 @@ console.log(sinStock);
 document.write("<ul><li><h3>Lista de Productos sin Stock: </h3></li></ul>");
 
 for (let producto of sinStock) {
-  //   document.write("<ul><li><h3>Nombre: " + producto.nombre + "</h3></li></ul>");
-  //   document.write("<ul><li><h3>Precio: " + producto.precio + "</h3></li></ul>");
-  //   document.write(
-  //     "<ul><li><h3>Precio con IVA es : " + producto.sumarIva() + "</h3><li><br>"
-  //   );
-  //   document.write("<ul><li><h3>Talle: " + producto.talle + "</h3></li></ul>");
-  //   document.write(
-  //     "<ul><li><h3>Cantidad: " + producto.cantidad + "</h3></li></ul>"
-  //   );
-
   console.log(producto.nombre);
   console.log(producto.precio);
   console.log(producto.nombre);
@@ -219,11 +205,6 @@ console.log(ordenadosCantidad);
 document.write("<ul><li><h3>Lista de Productos por cantidad: </h3></li></ul>");
 
 for (let producto of ordenadosCantidad) {
-  // document.write("<ul><li><h3>Nombre: " + producto.nombre + "</h3></li></ul>");
-  // document.write("<ul><li><h3>Talle: " + producto.talle + "</h3></li></ul>");
-  // document.write(
-  //   "<ul><li><h3>Cantidad: " + producto.cantidad + "</h3></li></ul>");
-
   console.log(producto.nombre);
   console.log(producto.talle);
   console.log(producto.cantidad);
@@ -242,10 +223,6 @@ console.log(ordenadosPrecio);
 document.write("<ul><li><h3>Lista de Productos por Precio: </h3><li>");
 
 for (let producto of ordenadosPrecio) {
-  // document.write("<ul><li><h3>Nombre: " + producto.nombre + "</h3></li></ul>");
-  // document.write("<ul><li><h3>Talle: " + producto.talle + "</h3></li></ul>");
-  // document.write("<ul><li><h3>Precio: " + producto.precio + "</h3></li></ul>");
-
   console.log(producto.nombre);
   console.log(producto.talle);
   console.log(producto.cantidad);
