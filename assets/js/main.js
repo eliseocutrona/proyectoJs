@@ -1,27 +1,16 @@
-// PRIMERA ENTREGA DEL PROYECTO FINAL
-// Formato: Página HTML y  código fuente en JavaScript. Debe identificar el apellido del alumno/a en el nombre de archivo comprimido por “claseApellido”.
-// Sugerencia: Si bien, por el momento solo podemos hacer entradas con prompt() y salidas con alert() o console.log(), es suficiente para empezar a pensar el proceso a simular en términos de entradas, variables, estructuras, funciones, métodos y salidas. Verificar Rúbrica
+// INTERACTUAR CON HTML
+// Formato: Página HTML y código fuente en JavaScript. Debe identificar el apellido del estudiante en el nombre de archivo comprimido por “claseApellido”.
+// Sugerencia: Generalmente, identificamos a un único elemento del DOM con el atributo id y a un conjunto asociado por class.
 
-// >>Objetivos Generales:
-// Codificar la funcionalidad inicial del simulador.
-// Identificar el flujo de trabajo del script en términos de captura de entradas ingresadas por el usuario, procesamiento esencial del simulador y notificación de resultados en forma de salida.
-
-// >>Objetivos Específicos:
-// Capturar entradas mediante prompt().
-// Declarar variables y objetos necesarios para simular el proceso seleccionado.
-// Crear funciones y/o métodos para realizar operaciones (suma, resta, concatenación, división, porcentaje, etc).
-// Efectuar una salida, que es el resultado de los datos procesados, la cual puede hacerse por alert() o console.log().
-
-// >>Para tener en cuenta:
-// La estructura hace referencia a el html y css, correspondientes al armado de la página general, pero que el JS que se evalúa, aún no está interactuando con ella.
-
-// >>Se debe entregar:
-// Estructura HTML del proyecto.
-// Variables de JS necesarias.
-// Funciones esenciales del proceso a simular.
-// Objetos de JS
-// Arrays
-// Métodos de búsqueda y filtrado sobre el Array
+// >> Consigna:  Traslada al proyecto integrador el concepto de objetos, visto en la clase de hoy. En función del tipo de simulador que hayas elegido, deberás:
+// Crear elementos manipulando el DOM a partir de la informaciòn de tus objetos.
+// Modificar etiquetas existentes en función del resultado de operaciones.
+// >>Aspectos a incluir en el entregable:
+// Archivo HTML y Archivo JS, referenciado en el HTML por etiqueta <script src="js/miarchivo.js"></script>, que incluya la definición de un algoritmo en JavaScript que opere sobre el DOM, modificando, agregando o eliminado elementos.
+// >>Ejemplo:
+// Podemos crear elementos HTML en función del listado de nuestros objetos identificados en la clase 6.
+// Establecer un mensaje de bienvenida aleatorio usando un array de mensajes.
+// Capturar una o màs entradas por promp() y mostrarlas en el HTML, modificando el DOM
 
 let producto = "";
 let precio = 0;
@@ -43,7 +32,58 @@ class Producto {
     this.precio = parseFloat(precio);
     this.talle = talle;
     this.cantidad = cantidad;
+    this.disponible = true;
   }
+
+  venderProducto() {
+    this.disponible = false;
+  }
+}
+
+function mostrarValores(array) {
+  for (let producto of array) {
+    console.log(producto.nombre);
+    console.log(producto.precio);
+    console.log(producto.cantidad);
+    console.log(producto.talle);
+  }
+}
+
+function renderizarProducto(array) {
+  // console.log();
+
+  array.forEach((element) => {
+    let contenedor = document.createElement("div");
+
+    //innerHTML plantilla de texto
+    contenedor.innerHTML = `
+        <div class="col-1 m-3">
+          <img src="assets/img/dummies/team1.jpg" alt="Producto" class="card-img-top" />
+          <div class="card-body">
+            <h2 class="card-title"><strong>Producto XXX</strong></h2>
+            <p>Descripcion Producto</p>
+            <ul class="social-profile">
+              <p class="card-text">
+              <h3> Nombre: ${element.nombre} </h3>
+              <p> Cantidad: ${element.cantidad}</p>
+              <p> Precio: ${element.precio}</p>
+              <p> Talle: ${element.talle}</p>
+              </p>
+
+              <div class="d-flex justify-content-center align-items-center">
+                <a href="#" class="btn btn-primary"
+                  ><span class="material-symbols-outlined">
+                    shopping_cart
+                  </span></a
+                >
+              </div>
+            </ul>
+          </div>
+        </div>
+     `;
+
+    document.body.appendChild(contenedor);
+  });
 }
 
 // calcularIva al producto seleccionado
@@ -160,12 +200,8 @@ if (cantidad > 0) {
 
 console.log(arrayProductos);
 
-for (let producto of arrayProductos) {
-  console.log(producto.nombre);
-  console.log(producto.precio);
-  console.log(producto.cantidad);
-  console.log(producto.talle);
-}
+mostrarValores(arrayProductos);
+renderizarProducto(arrayProductos);
 
 // PRODUCTOS sin STOCK que la cantidad del objeto sea igual a 0 o que la disponibilidad este en false
 let sinStock = arrayProductos.filter((producto) => producto.cantidad === 0);
@@ -173,12 +209,8 @@ console.log(sinStock);
 
 console.log("Lista de Productos sin Stock:");
 
-for (let producto of sinStock) {
-  console.log(producto.nombre);
-  console.log(producto.precio);
-  console.log(producto.cantidad);
-  console.log(producto.talle);
-}
+mostrarValores(sinStock);
+// renderizarProducto(sinStock);
 
 let ordenadosCantidad = [];
 ordenadosCantidad = arrayProductos.map((elemento) => elemento);
@@ -189,12 +221,8 @@ ordenadosCantidad.sort(function (a, b) {
 console.log("Ordenados por Cantidad Descendente");
 console.log(ordenadosCantidad);
 
-for (let producto of ordenadosCantidad) {
-  console.log(producto.nombre);
-  console.log(producto.precio);
-  console.log(producto.cantidad);
-  console.log(producto.talle);
-}
+mostrarValores(ordenadosCantidad);
+// renderizarProducto(ordenadosCantidad);
 
 let ordenadosPrecio = [];
 ordenadosCantidad = arrayProductos.map((elemento) => elemento);
@@ -206,9 +234,6 @@ ordenadosPrecio.sort(function (a, b) {
 console.log("Ordenados por Precios Descendente");
 console.log(ordenadosPrecio);
 
-for (let producto of ordenadosPrecio) {
-  console.log(producto.nombre);
-  console.log(producto.precio);
-  console.log(producto.cantidad);
-  console.log(producto.talle);
-}
+mostrarValores(ordenadosPrecio);
+
+// renderizarProducto(ordenadosPrecio);
