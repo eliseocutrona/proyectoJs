@@ -49,32 +49,110 @@ function mostrarValores(array) {
   }
 }
 
+// agregue Modo Oscuro con un evento
+
+let boton = document.querySelector("#boton");
+
+boton.addEventListener("click", function () {
+  // e.preventDefault()
+
+  if (localStorage.getItem("theme") == "dark") {
+    lightMode();
+  } else {
+    darkMode();
+  }
+});
+
+function darkMode() {
+  // let lista = document.querySelector("ul");
+  // lista.style.backgroundColor = "blue";
+
+  // let lista2 = document.querySelector("li");
+  // lista2.style.backgroundColor = "blue";
+
+  // let div = document.querySelector("div");
+  // div.style.color = "blue";
+
+  let body = document.querySelector("body");
+  body.style.backgroundColor = "black";
+
+  let parrafos = document.querySelector("#parrafos");
+  parrafos.style.color = "white";
+
+  localStorage.setItem("theme", "dark");
+
+  // let nav2 = document.querySelector("nav");
+  // nav2.style.color = "blue";
+}
+
+function lightMode() {
+  // let lista = document.querySelector("ul");
+  // lista.style.backgroundColor = "red";
+
+  // let lista2 = document.querySelector("li");
+  // lista2.style.backgroundColor = "red";
+
+  // let div = document.querySelector("div");
+  // div.style.color = "red";
+  let body = document.querySelector("body");
+  body.style.backgroundColor = "white";
+
+  let parrafos = document.querySelector("#parrafos");
+  parrafos.style.color = "black";
+  localStorage.setItem("theme", "light");
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  if (localStorage.getItem("theme") == "dark") {
+    darkMode();
+  } else {
+    lightMode();
+  }
+});
+
+// NO ME FUNCIONA
+// let agregarProducto = document.querySelector("#btnAgregarCantidad");
+
+// agregarProducto.addEventListener("click", agregarCantidadProducto)
+// agregarProducto.addEventListener("click", agregarCantidadProducto)
+// function agregarCantidadProducto() {
+// e.preventDefault();
+
+// console.log("Sumar Producto");
+// alert("Sumar Producto");
+
+// arrayProductos.push(new Producto(nombreAux, precio, talleAux, cantidad));
+// cantidadTotal += cantidad;
+// precioTotal += precio * cantidad;
+
+// renderizarProducto(arrayProductos);
+// }
+
 function renderizarProducto(array) {
   // console.log();
 
   array.forEach((element) => {
     let contenedor = document.createElement("div");
 
-    //innerHTML plantilla de texto
-    contenedor.innerHTML = `
+    if (element.cantidad > 0) {
+      //innerHTML plantilla de texto
+      contenedor.innerHTML = `
         <div class="col-1 m-3">
           <img src="assets/img/dummies/team1.jpg" alt="Producto" class="card-img-top" />
           <div class="card-body">
-            <h2 class="card-title"><strong>Producto XXX</strong></h2>
-            <p>Descripcion Producto</p>
-            <ul class="social-profile">
+            <ul class="social-profile" id ="carrito">
               <p class="card-text">
-              <h3> Nombre: ${element.nombre} </h3>
+              <h3> Producto: ${element.nombre} </h3>
               <p> Cantidad: ${element.cantidad}</p>
               <p> Precio: ${element.precio}</p>
               <p> Talle: ${element.talle}</p>
               </p>
 
               <div class="d-flex justify-content-center align-items-center">
-                <a href="#" class="btn btn-primary"
-                  ><span class="material-symbols-outlined">
-                    shopping_cart
-                  </span></a
+                <a href="#" class="btn btn-primary" 
+                  ><button class="material-symbols-outlined" id="btnAgregarCantidad">
+                    add_shopping_cart
+                  </button></a
                 >
               </div>
             </ul>
@@ -82,7 +160,8 @@ function renderizarProducto(array) {
         </div>
      `;
 
-    document.body.appendChild(contenedor);
+      document.body.appendChild(contenedor);
+    }
   });
 }
 
@@ -159,7 +238,9 @@ do {
 
     case "D":
       seguirComprando = false;
+      cantidadTotal = cantidad--;
       alert("Lamentamos que no quiera comprar");
+
       break;
     default:
       alert("Algunos de los datos ingresados no son correctos");
@@ -169,10 +250,9 @@ do {
       break;
   }
 
+  arrayProductos.push(new Producto(nombreAux, precio, talleAux, cantidad));
   cantidadTotal += cantidad;
   precioTotal += precio * cantidad;
-
-  arrayProductos.push(new Producto(nombreAux, precio, talleAux, cantidad));
 
   if (seguirComprando === true) {
     seguirComprando = confirm("¿Queres seguir comprando?");
