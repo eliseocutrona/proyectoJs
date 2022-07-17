@@ -177,87 +177,87 @@ function sumarIva(precio) {
 
 // Programa principal
 
-do {
-  producto = prompt(
-    "¿Queres comprar algun producto A) Remera B) Camisa C) Chomba D) NO?"
-  );
+// do {
+//   producto = prompt(
+//     "¿Queres comprar algun producto A) Remera B) Camisa C) Chomba D) NO?"
+//   );
 
-  if (seguirComprando == true && producto != "D") {
-    cantidad = Number(prompt("¿Cuantos queres comprar?"));
-    talle = prompt(
-      "Que talle sos? A) Talle-XS B) Talle-S C) Talle-M D) Talle-L E) Talle-XL F) Talle-XXL"
-    );
+//   if (seguirComprando == true && producto != "D") {
+//     cantidad = Number(prompt("¿Cuantos queres comprar?"));
+//     talle = prompt(
+//       "Que talle sos? A) Talle-XS B) Talle-S C) Talle-M D) Talle-L E) Talle-XL F) Talle-XXL"
+//     );
 
-    switch (talle) {
-      case "A":
-        talleAux = "XS";
-        precio = 100;
+//     switch (talle) {
+//       case "A":
+//         talleAux = "XS";
+//         precio = 100;
 
-        break;
-      case "B":
-        talleAux = "S";
-        precio = 101;
+//         break;
+//       case "B":
+//         talleAux = "S";
+//         precio = 101;
 
-        break;
-      case "C":
-        talleAux = "M";
-        precio = 102;
+//         break;
+//       case "C":
+//         talleAux = "M";
+//         precio = 102;
 
-        break;
-      case "D":
-        talleAux = "L";
-        precio = 103;
+//         break;
+//       case "D":
+//         talleAux = "L";
+//         precio = 103;
 
-        break;
-      case "E":
-        talleAux = "XL";
-        precio = 104;
+//         break;
+//       case "E":
+//         talleAux = "XL";
+//         precio = 104;
 
-        break;
-      case "F":
-        talleAux = "XXL";
-        precio = 105;
+//         break;
+//       case "F":
+//         talleAux = "XXL";
+//         precio = 105;
 
-        break;
-    }
-  }
+//         break;
+//     }
+//   }
 
-  switch (producto) {
-    case "A":
-      nombreAux = "Remera";
-      break;
+//   switch (producto) {
+//     case "A":
+//       nombreAux = "Remera";
+//       break;
 
-    case "B":
-      nombreAux = "Camisa";
-      // console.log(Producto);
-      break;
+//     case "B":
+//       nombreAux = "Camisa";
+//       // console.log(Producto);
+//       break;
 
-    case "C":
-      nombreAux = "Chomba";
-      break;
+//     case "C":
+//       nombreAux = "Chomba";
+//       break;
 
-    case "D":
-      seguirComprando = false;
-      cantidadTotal = cantidad--;
-      alert("Lamentamos que no quiera comprar");
+//     case "D":
+//       seguirComprando = false;
+//       cantidadTotal = cantidad--;
+//       alert("Lamentamos que no quiera comprar");
 
-      break;
-    default:
-      alert("Algunos de los datos ingresados no son correctos");
-      precio = 0;
-      cantidad = 0;
+//       break;
+//     default:
+//       alert("Algunos de los datos ingresados no son correctos");
+//       precio = 0;
+//       cantidad = 0;
 
-      break;
-  }
+//       break;
+//   }
 
-  arrayProductos.push(new Producto(nombreAux, precio, talleAux, cantidad));
-  cantidadTotal += cantidad;
-  precioTotal += precio * cantidad;
+//   arrayProductos.push(new Producto(nombreAux, precio, talleAux, cantidad));
+//   cantidadTotal += cantidad;
+//   precioTotal += precio * cantidad;
 
-  if (seguirComprando === true) {
-    seguirComprando = confirm("¿Queres seguir comprando?");
-  }
-} while (seguirComprando == true);
+//   if (seguirComprando === true) {
+//     seguirComprando = confirm("¿Queres seguir comprando?");
+//   }
+// } while (seguirComprando == true);
 
 // si la cantidad es mayor de 0 quiere decir que compro ,
 // calculo el IVA con el precio del producto x talle
