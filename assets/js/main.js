@@ -80,20 +80,9 @@ function darkMode() {
   parrafos.style.color = "white";
 
   localStorage.setItem("theme", "dark");
-
-  // let nav2 = document.querySelector("nav");
-  // nav2.style.color = "blue";
 }
 
 function lightMode() {
-  // let lista = document.querySelector("ul");
-  // lista.style.backgroundColor = "red";
-
-  // let lista2 = document.querySelector("li");
-  // lista2.style.backgroundColor = "red";
-
-  // let div = document.querySelector("div");
-  // div.style.color = "red";
   let body = document.querySelector("body");
   body.style.backgroundColor = "white";
 
