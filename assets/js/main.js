@@ -82,8 +82,7 @@ do {
     case "B":
     case "C":
       precio = parseInt(obtenerPrecioxTalle(talle, precio));
-      // alert(talle);
-      // alert(precio); debugeo
+
       break;
     case "D":
       seguirComprando = false;
@@ -115,6 +114,7 @@ if (cantidad > 0) {
       " unidades y el precio final es: $" +
       parseInt(precioTotal)
   );
+  
 
   finalizarCompra = confirm("¿Quiere finalizar la compra?");
   if (finalizarCompra) {
