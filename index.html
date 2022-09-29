@@ -16,7 +16,6 @@
 
     <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
 
-
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
@@ -34,6 +33,12 @@
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="assets/img/percha-ropa-icono.jpg"
     />
   </head>
 
@@ -61,21 +66,25 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item m-1">
-                <a class="nav-link active" aria-current="page" href="#intro"
-                  >Inicio</a
-                >
-              </li>
-              <li class="nav-item m-1">
-                <a class="nav-link" href="#about">Comprar - Shopping Cart</a>
+                <a class="nav-link" href="#about">Shopping Cart</a>
               </li>
 
               <li class="nav-item m-1">
                 <a class="nav-link" href="#contact">Pagar</a>
               </li>
+
+              
+            
             </ul>
+
             <div>
+             
               <form class="d-flex">
+                
+                
                 <div>
+
+                  
                   <input
                     class="form-control-sm rounded me-2"
                     type="search"
@@ -93,9 +102,17 @@
                   <button class="material-symbols-outlined bg-light" id="boton">
                     invert_colors
                   </button>
+
+                  <button class="material-symbols-outlined bg-light" id="btn-cart">
+                    shopping_cart
+                    </span>
                 </div>
+
+                
               </form>
+
             </div>
+
           </div>
         </div>
       </nav>
@@ -131,53 +148,122 @@
     </section>
     <!-- end intro -->
     <!-- Section about -->
-    <section id="about" class="">
-      <div id="parrafos">
-        <h3 class="text-center">COMPRAR</h3>
+
+    <section id="tienda">
+      <div class="container">
+        <div id="parrafos" >
+          <h3 class="text-center">Opciones</h3>
+        </div>
+   
+
+        
       </div>
 
-      <div class="container">
-        <div class="row">
-          <div class="col">Hola2</div>
+
+      <div class="tienda">
+       <div class="tienda-uno">
+        <form onsubmit="return false" id="forma-cliente">
+           <div class="tienda-control" id="tienda-control" >
+             <label for="talle">Talle:</label>
+             <select required name="talle" id="talle" >
+               <option value="S">S</option>
+               <option value="M">M</option>
+               <option value="L">L</option>
+               <option value="XL">XL</option>
+               <option value="XXL">XLL</option>
+             </select>
+             <label for="canti">Cantidad:</label>
+             <input required type="number" name="canti" id="canti">
+             </label>
+             <label for="dire">Dirección de envio:</label>
+             <input required type="text" id="direccion">
+             
+             <label for="cliente">A nombre de:</label>
+             <input required type="text" id="cliente">
+          
+             
+             <label for="obs">Email:</label>
+             <input type="email" id="obs">
+          
+             <button type="submit" id="anadir-carrito">Añadir al carrito</button>
+             <button type="button" id="boton-modal"> Ver carrito </button>
+            </div>
+        </form>
+         <div class="filtro">
+           <label for="catego" >Mostrar:</label>
+           <select name="catego" id="filtro" >
+            <option value="" selected disabled>...</option>
+             <option value="todo">Todo</option>
+             <option value="remera">Remeras</option>
+             <option value="gorro">Gorras</option>
+             <option value="calzado">Calzado</option>
+           </select>
+         </div>
+       </div>
+        <div class="tienda-dos" >
+          <div class="tienda-copy-fondo" id="fondo-tienda">
+            <img src="images/fondo-prod1.svg" alt="" class="tienda-hojas-claro" id="hoja" >
+            <img src="images/fondo-prod2.svg" alt="" class="tienda-hojas-claro" id="hoja" >
+            <img src="images/fondo-prod3.svg" alt="" class="tienda-hojas-claro" id="hoja" >
+            <img src="images/fondo-prod4.svg" alt="" class="tienda-hojas-claro" id="hoja" >
+            <img src="images/fondo-prod5.svg" alt="" class="tienda-hojas-claro" id="hoja" >
+            <img src="images/fondo-prod6.svg" alt="" class="tienda-hojas-claro" id="hoja" >
+          </div>
+        <div class="tienda-tres"> 
+          <div class="tienda-seleccion">
+            <span class="seleccion-modelo" id="producto-seleccion-nombre"></span>
+            <img id="producto-seleccion" src="" alt="">
+          </div>
+          <div class="extra">
+            <p class= "seleccion-modelo" id="producto-seleccion-precio"></p>
+            <a class= "seleccion-modelo" id="btn-loquiero" href="#tienda">¡lo quiero!</a>
+            </div>
+          <div class="tienda-fotos">
+          </div>      
+          </div>
         </div>
       </div>
+     <div class="carrito-modal" id="carrito-modal">
+       <div class="tienda-carrito">
+       <div class="carrito-top">
+         <button class="boton-cerrar" id="cerrar-modal">X</button>
+          <p>Estás comprando <span id="cantidad-comprada">0</span> productos</p>
+       </div>
+       <div class="carrito-bottom">
+          <div class="carrito-img" id="carrito-flex">
+          </div>
+         <div class="carrito-btn">
+           <button type="submit" id="btn-comprar">Comprar</button>
+           <button type="button" id="eli-prod">Eliminar último producto</button>
+         </div>
+        </div>
+       </div>
+     </div>
     </section>
 
-    <section id="contact" class="">
-      <div class="container">
-        <div id="parrafos">
-          <h3 class="text-center">COMPRAR</h3>
-        </div>
 
-        <div class="row">
-          <div class="col">Hola2</div>
-        </div>
-      </div>
+    <section id="extra">
     </section>
 
     <footer class="fixed-bottom">
-      <ul
-        class="social-network social-circle d-flex justify-content-center align-items-center"
-      >
-        <li>
-          <a href="#" class="" title="Facebook"
-            ><i class="fa fa-facebook"></i
-          ></a>
-        </li>
-        <li>
-          <a href="#" class="" title="Twitter"><i class="fa fa-twitter"></i></a>
-        </li>
-
-        <li>
-          <a href="#" class="" title="Instagram">
-            <i class="fa fa-instagram"></i>
-          </a>
-        </li>
-      </ul>
+      <div class="d-flex justify-content-center">
+        Desarrollado por
+        <a href="https://www.linkedin.com/in/eliseo-cutrona/" target="blanck">
+          @eliseocutrona
+        </a>
+      </div>
     </footer>
 
     <!-- javascript coderhouse -->
     <script src="assets/js/main.js"></script>
+
+    <script src="assets/js/carrito.js" type="module"></script>
+    <!-- <script type="module" src="assets/js/darkmode.js"></script> -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- javascript -->
 
     <script src="assets/js/jquery-1.9.1.min.js"></script>
