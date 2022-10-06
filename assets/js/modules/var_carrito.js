@@ -1,5 +1,4 @@
-// import { fadeInSlow } from "./fade.js";
-
+ import { fadeInSlow } from "./fade.js";
 
 //Clase del objeto del carrito
 export class Pedido {
@@ -70,7 +69,6 @@ export const precioProducto = document.querySelector(
 //Productos disponibles
 export function leerProductos() {
   fetch("http://myjson.dit.upm.es/api/bins/i2ei")
-//   fetch("http://myjson.dit.upm.es/api/bins/aebw")
     .then((response) => response.json().then((data) => (PRODUCTOS = data)))
     .catch((err) => console.log("hubo un error: " + err));
 }

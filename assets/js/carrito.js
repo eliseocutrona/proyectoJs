@@ -69,7 +69,10 @@ btnComprar.onclick = () => {
     }
   });
 };
-botonLoQuiero.onclick = () => {
-  tiendaControl.style.display !== "grid" && fadeInFast(tiendaControl);
-  tiendaControl.style.display = "grid";
-};
+
+//
+// NO ME FUNCIONA
+//  botonLoQuiero.onclick = () => {
+//   tiendaControl.style.display !== "grid" && fadeInFast(tiendaControl);
+//   tiendaControl.style.display = "grid";
+// };
