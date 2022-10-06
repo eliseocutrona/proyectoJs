@@ -1,4 +1,5 @@
-import { fadeInSlow } from "./fade.js";
+// import { fadeInSlow } from "./fade.js";
+
 
 //Clase del objeto del carrito
 export class Pedido {
