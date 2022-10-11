@@ -1,4 +1,4 @@
- import { fadeInSlow } from "./fade.js";
+import { fadeInSlow } from "./fade.js";
 
 //Clase del objeto del carrito
 export class Pedido {
@@ -236,6 +236,8 @@ export function añadido() {
     },
   }).showToast();
 }
+
+// No me envia el POST
 export function enviarPedido() {
   fetch("https://eolbh6zovsq21ng.m.pipedream.net", {
     method: "POST",

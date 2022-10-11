@@ -1,3 +1,5 @@
+import { fadeInFast} from './modules/fade.js'
+
 import {
   filtroSeleccion,
   tiendaControl,
@@ -70,9 +72,13 @@ btnComprar.onclick = () => {
   });
 };
 
-//
 // NO ME FUNCIONA
-//  botonLoQuiero.onclick = () => {
-//   tiendaControl.style.display !== "grid" && fadeInFast(tiendaControl);
-//   tiendaControl.style.display = "grid";
-// };
+botonLoQuiero.onclick = () => {
+  // tiendaControl.style.display !== "grid" && fadeInFast(tiendaControl);
+  // tiendaControl.style.display = "grid";
+
+  let variable = fadeInFast(tiendaControl);
+  if (tiendaControl.style.display !== "grid" && variable) {
+    tiendaControl.style.display = "grid";
+  }
+};
