@@ -68,10 +68,7 @@ export const precioProducto = document.querySelector(
 
 //Productos disponibles
 export function leerProductos() {
-  // fetch("http://myjson.dit.upm.es/api/bins/86v2")
-  // fetch("http://myjson.dit.upm.es/api/bins/ca8m")
   fetch("http://myjson.dit.upm.es/api/bins/6a6u")
-  // fetch("http://myjson.dit.upm.es/api/bins/2uqe")
     .then((response) => response.json().then((data) => (PRODUCTOS = data)))
     .catch((err) => console.log("hubo un error: " + err));
 }
