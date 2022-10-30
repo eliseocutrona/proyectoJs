@@ -68,7 +68,10 @@ export const precioProducto = document.querySelector(
 
 //Productos disponibles
 export function leerProductos() {
-  fetch("http://myjson.dit.upm.es/api/bins/i2ei")
+  // fetch("http://myjson.dit.upm.es/api/bins/86v2")
+  // fetch("http://myjson.dit.upm.es/api/bins/ca8m")
+  fetch("http://myjson.dit.upm.es/api/bins/6a6u")
+  // fetch("http://myjson.dit.upm.es/api/bins/2uqe")
     .then((response) => response.json().then((data) => (PRODUCTOS = data)))
     .catch((err) => console.log("hubo un error: " + err));
 }
@@ -203,11 +206,12 @@ export function recordarCarrito() {
     Toastify({
       text: "¡Tenés productos en el carrito!",
       duration: 2000,
-      gravity: "top",
+      gravity: "bottom",
       position: "left",
-      avatar: "https://cdn-icons-png.flaticon.com/512/4555/4555971.png",
+      // avatar:,
+      // avatar: "https://cdn-icons-png.flaticon.com/512/4555/4555971.png",
       onClick: function () {
-        carritoModal.style.display = "block";
+        // carritoModal.style.display = "block";
       },
     }).showToast();
   }
@@ -221,15 +225,15 @@ export function reiniciarCarrito() {
 }
 export function notificar() {
   swal(
-    `${CARRITO[0].cliente}, ¡gracias por elegirnos! Recibirás tu compra en ${CARRITO[0].direccion} dentro de una semana, te enviamos todos los detalles de tu compra a ${CARRITO[0].email}`
+    `${CARRITO[0].cliente}, ¡gracias por elegirnos! Recibirás tu compra en ${CARRITO[0].direccion} dentro de una semana, te mandamos los detalles de tu compra a ${CARRITO[0].email}`
   ).then((carritoModal.style.display = "none"));
 }
 export function añadido() {
   Toastify({
-    text: "¡Envíamos tu selección al carrito!",
+    text: "¡Envíamos el producto al carrito!",
     duration: 1000,
     gravity: "top",
-    position: "left",
+    position: "right",
     avatar: "https://cdn-icons-png.flaticon.com/512/4555/4555971.png",
     onClick: function () {
       carritoModal.style.display = "block";

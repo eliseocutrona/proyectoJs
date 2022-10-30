@@ -8,6 +8,12 @@
     <meta name="author" content="" />
     <!-- styles -->
 
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+
     <link rel="stylesheet" href="assets/css/slippry.css" />
 
     <link href="assets/css/style.css" rel="stylesheet" />
@@ -55,18 +61,16 @@
               <span class="navbar-toggler-icon"></span>
             </button>
           </div>
+
           <div class="">
             <a class="navbar-brand" href="index.html">miTienda</a>
           </div>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            
-
-            
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
 
             <div>
-              <form class="d-flex ">
+              <form class="d-flex">
                 <div>
                   <input
                     class="form-control-sm rounded me-2"
@@ -104,6 +108,7 @@
         </div>
       </nav>
     </header>
+
     <!-- section intro -->
     <section id="intro" class="">
       <ul id="slippry-slider">
@@ -166,14 +171,14 @@
               <button type="button" id="boton-modal">Ver carrito</button>
             </div>
           </form>
-          <div class="filtro">
+          <div>
             <label for="catego">Mostrar:</label>
             <select name="catego" id="filtro">
               <option value="" selected disabled>...</option>
               <option value="todo">Todo</option>
               <option value="remera">Remeras</option>
-              <option value="gorro">Camisas</option>
-              <option value="calzado">Camperas</option>
+              <option value="camisa">Camisas</option>
+              <option value="calzado">Calzado</option>
             </select>
           </div>
         </div>
@@ -235,6 +240,7 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/toastify-js"
     ></script>
+
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- javascript -->
 
