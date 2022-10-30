@@ -205,10 +205,8 @@ export function recordarCarrito() {
       duration: 2000,
       gravity: "bottom",
       position: "left",
-      // avatar:,
-      // avatar: "https://cdn-icons-png.flaticon.com/512/4555/4555971.png",
       onClick: function () {
-        // carritoModal.style.display = "block";
+         carritoModal.style.display = "block";
       },
     }).showToast();
   }

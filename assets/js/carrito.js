@@ -41,20 +41,8 @@ boton.addEventListener("click", function () {
 });
 
 function darkMode() {
-  // let lista = document.querySelector("ul");
-  // lista.style.backgroundColor = "blue";
-
-  // let lista2 = document.querySelector("li");
-  // lista2.style.backgroundColor = "blue";
-
-  // let div = document.querySelector("div");
-  // div.style.color = "blue";
-
   let body = document.querySelector("body");
   body.style.backgroundColor = "grey";
-
-  // let parrafos = document.querySelector("#parrafos");
-  // parrafos.style.color = "white";
 
   localStorage.setItem("theme", "dark");
 }
@@ -63,8 +51,6 @@ function lightMode() {
   let body = document.querySelector("body");
   body.style.backgroundColor = "white";
 
-  // let parrafos = document.querySelector("#parrafos");
-  // parrafos.style.color = "black";
   localStorage.setItem("theme", "light");
 }
 
@@ -122,13 +108,7 @@ btnComprar.onclick = () => {
   });
 };
 
-// NO ME FUNCIONA
 botonLoQuiero.onclick = () => {
-  // tiendaControl.style.display !== "grid" && fadeInFast(tiendaControl);
-  // tiendaControl.style.display = "grid";
-
   tiendaControl.style.display !== "grid" && fadeInFast(tiendaControl);
   tiendaControl.style.display = "grid";
 };
-
-
