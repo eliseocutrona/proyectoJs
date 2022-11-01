@@ -89,6 +89,8 @@ export function actualizarNombre() {
   nombreProducto.scrollIntoView({ block: "center" });
 }
 
+
+// varia segun si sea para calzado o remera/camisa
 export function talleCalzado() {
   if (objetoElegido.clase == "calzado") {
     talle.innerHTML =
@@ -184,7 +186,7 @@ export function enviarAlCarrito() {
     sumarCantidad(CARRITO);
     localStorage.setItem("carrito", JSON.stringify(CARRITO));
   } else {
-    swal("Algo no salió como esperabámos, revisá tus datos");
+    swal("Algo no salió como bien, revisá los datos");
   }
   llenarCarrito();
 }
@@ -206,7 +208,7 @@ export function recordarCarrito() {
       gravity: "bottom",
       position: "left",
       onClick: function () {
-         carritoModal.style.display = "block";
+        carritoModal.style.display = "block";
       },
     }).showToast();
   }
@@ -220,7 +222,7 @@ export function reiniciarCarrito() {
 }
 export function notificar() {
   swal(
-    `${CARRITO[0].cliente}, ¡gracias por elegirnos! Recibirás tu compra en ${CARRITO[0].direccion} dentro de una semana, te mandamos los detalles de tu compra a ${CARRITO[0].email}`
+    `${CARRITO[0].cliente}, Recibirás tu compra en ${CARRITO[0].direccion} dentro de los proximos 7 dias, te enviamos los detalles de tu compra a ${CARRITO[0].email}`
   ).then((carritoModal.style.display = "none"));
 }
 export function añadido() {
